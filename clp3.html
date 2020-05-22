@@ -12,40 +12,6 @@ var sv = getParam("sv");
 </script>
 <html>
 <head>
-</head>
-<body class="loading"><div id="serv-wrap">
-<div class="main section" id="main">
-<div class="widget HTML" data-version="1" id="HTML1">
-<div class="widget-content">
-<script src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js" type="text/javascript"></script>
-<script src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js" type="text/javascript"></script>
-<script src="https://cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/cdnbye@latest/dist/clappr-plugin.min.js"></script>
-<div id="player">
-</div>
-<script>
-var playerElement = document.getElementById("player");
-var player = new Clappr.Player({
- height: "100%",
- width: "100%",
-  plugins: {
-    'core': [LevelSelector]
-  },
- hlsjsConfig: {
- p2pConfig: {
-            wsSignalerAddr: 'wss://cdg3.edge.tmed.pw',
-        
-        },
- xhrSetup: function(xhr, url) {
-  xhr.withCredentials = false;
- }
- 
- }
-});
-player.attachTo(playerElement);
-player.load({ source: sv, mimeType: 'application/vnd.apple.mpegurl'});
-player.play();
-</script>
   <style type="text/css">
 body {
     overflow: hidden;
@@ -80,4 +46,39 @@ content: "موقع كوره جي لايف  | http://www.kora-g.ml";
 .media-control[data-media-control] .media-control-layer[data-controls]{height:25px!important;background-color:rgba(0,0,0,.31)}.media-control[data-media-control] .media-control-layer[data-controls] .bar-container[data-seekbar]{top:-14px}
 .container[data-container] span{display:none}
 </style>
+</head>
+<body class="loading"><div id="serv-wrap">
+<div class="main section" id="main">
+<div class="widget HTML" data-version="1" id="HTML1">
+<div class="widget-content">
+<script src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cdnbye@latest/dist/clappr-plugin.min.js"></script>
+<div id="player">
+</div>
+<script>
+var playerElement = document.getElementById("player");
+var player = new Clappr.Player({
+ height: "100%",
+ width: "100%",
+  plugins: {
+    'core': [LevelSelector]
+  },
+ hlsjsConfig: {
+ p2pConfig: {
+            wsSignalerAddr: 'wss://cdg3.edge.tmed.pw',
+        
+        },
+ xhrSetup: function(xhr, url) {
+  xhr.withCredentials = false;
+ }
+ 
+ }
+});
+player.attachTo(playerElement);
+player.load({ source: sv, mimeType: 'application/vnd.apple.mpegurl'});
+player.play();
+</script>
+ 
 </body></html>
