@@ -12,36 +12,6 @@ function getParam ( sname )
 }
 var sv = getParam("sv");
 </script>
-<script>
-//<![CDATA[ 
-
-var ip = "localhost";
-
-function api(param) {
- var http;
- if (window.XMLHttpRequest)  {
-  http=new XMLHttpRequest();
- } else {
-  http=new ActiveXObject("Microsoft.XMLHTTP");
- }
- var url = "http://"+ip+":5000/Remote/"+param;
- http.open("GET", url, true);
- http.send();
-}
-
-function hadiFullScreen() {
- api("goFullScreen");
-}
-
-//]]>
-</script>
-<script language=javascript>
-<!--
-if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
-   location.replace("http://raw.githack.com/gaberomar/clp2/master/clp2.html");
-}
--->
-</script>
 <script src="https://cdn.jsdelivr.net/npm/clappr@latest"></script>                                                                            
 <script src="https://cdn.jsdelivr.net/npm/p2p-media-loader-core@latest/build/p2p-media-loader-core.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js"></script>                                                                                                          
