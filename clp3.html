@@ -59,41 +59,58 @@ if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i
 <div id="player"></div>
   <script type="a35557faf9805d1fdd774565-text/javascript">
 //<![CDATA[ 
-      var player = new Clappr.Player(
-        {
- parentId: '#player',
-         source: sv,
-          width: '100%',
-                height: "100%",
-                autoPlay:!1,
-                mediacontrol: {seekbar: "#0ef429", buttons: "#0ef429"},  
-                stretching: 'exactfit',
-     plugins: [DashShakaPlayback, LevelSelector],
-         shakaConfiguration: {
-            preferredAudioLanguage: 'pt-BR',
-            streaming: {
-  rebufferingGoal: 6,
-  bufferingGoal: 2,
-  retryParameters: {
-    timeout: 3000,
-    maxAttempts: 128,
-    baseDelay: 200,
-    backoffFactor: 4,
-    fuzzFactor: 0.5,
+    var playerElement = document.getElementById("player");
+ var player = new Clappr.Player({
+  parentId: "#Player",
+  source : sv,
+ command: 'playM3u8', 
+ width: '100%',
+ height: "100%",
+ autoPlay: true,
+ poster:"",
+ watermark: "", position: 'top-right',
+ mediacontrol: {seekbar: "#19d0fb", buttons: "#19d0fb"},  
+ stretching: 'exactfit',
+ plugins: [DashShakaPlayback, LevelSelector],
+ shakaConfiguration: {
+ preferredAudioLanguage: 'pt-BR',
+  abr: { 
+                        defaultBandwidthEstimate: 50000
+                    },
+ streaming: {
+   rebufferingGoal: 2,
+                        bufferingGoal: 4,
+                        startAtSegmentBoundary: true,
+                        retryParameters: {
+                            timeout: 3000,
+                            maxAttempts: 128,
+                            baseDelay: 200,
+                            backoffFactor: 4,
+                            fuzzFactor: 0.5,
   }
 }
-         },
-          shakaOnBeforeLoad: function(shaka_player) {
+      },
+          shakaOnBeforeLoad: function(shaka_player)
+ {
+ const smart = navigator.userAgent.match(/.+SmartTV.+/);
+ if(smart) {
+                        return; }
             // shaka_player.getNetworkingEngine().registerRequestFilter() ...
- player.on(Clappr.Events.PLAYER_STOP, playerStop);
+           },
+    
+    
+        }
+);
+         player.on(Clappr.Events.PLAYER_STOP, playerStop);
             function playerStop(){
              location.reload();
- player.play(); 
-   load_player(sv);
-         } 
-       },
- parentId: '#player',
-         });
+ const qengine = new qEngine();
+                    shaka.getNetworkingEngine().registerRequestFilter(qengine.ReqFilter.bind(qengine));
+                    shaka.getNetworkingEngine().registerResponseFilter(qengine.ResFilter.bind(qengine));
+            }
+            player.setVolume(100); // 1%
+            player.play();
+ load_player(sv);
        
     //]]>
 </script>
