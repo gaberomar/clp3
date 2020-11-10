@@ -151,17 +151,19 @@ watermark: "https://1.bp.blogspot.com/-JfWb2LWM2_M/Xqt1muzh4CI/AAAAAAAAI1I/mHIUU
 }
   },
  },
-}});     
+}}); 
+
 player.attachTo(playerElement);
-player.load({source: sv_channel, mimeType: 'application/x-mpegURL'});
+player.load({source: sv_channel, mimeType: 'application/m3u8'});
 player.play();
-player.load({source: sv_channel, command: 'video_url.m3u8', mimeType: 'application/m3u8'});
+
  player.on(Clappr.Events.PLAYER_STOP, playerStop);
  function playerStop(){
        } location.reload();
 }
 load_player(sv);
 
+    
 </script>
 
 <style>
