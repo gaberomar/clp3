@@ -127,8 +127,14 @@ ChromecastPlugin: {
  parentId: "#player",
 
 });
+  player.on(Clappr.Events.PLAYER_STOP, playerStop);
+            function playerStop(){
+             location.reload();
+            player.play();
+           load_player(sv);
+            }
 
-
+      player.setVolume(100); // 1%
 
  </script>
 
