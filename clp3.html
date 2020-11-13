@@ -100,6 +100,13 @@ document.addEventListener('click', function(evt) {
 <div id="player"></div>
 <script type="eb1f40fc8787e3cbc2f6cb44-text/javascript">
 
+var getQueryString = function ( field, url ) {
+    var href = url ? url : window.location.href;
+    var reg = new RegExp( '[?&]' + field + '=([^&?#]*)', 'i' );
+    var string = reg.exec(href);
+    return string ? string[1] : null;
+};
+var topVideo = getQueryString('sv');
 var player = new Clappr.Player({
  source: sv,
  width: "100%",
