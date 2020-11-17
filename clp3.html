@@ -11,6 +11,27 @@ function getParam ( sname )
 var sv = getParam("sv");
 
 </script>
+<SCRIPT> 
+ return false; 
+} 
+function noleftclick(e)     
+{ 
+    if (window.Event)     
+    { 
+        if (e.which == 2 || e.which == 3) 
+            return false; 
+    } 
+    else 
+        if (event.button == 2 || event.button == 1) 
+        { 
+            event.cancelBubble = true ; 
+            event.returnValue = false; 
+            return false; 
+        } 
+} 
+document.oncontextmenu = nocontextmenu;         
+document.onmousedown = noleftclick;     
+</SCRIPT>
 <meta name="robots" content="noindex, nofollow">
 <meta name="referrer" content="no-referrer">
 <script type="a56bf8484cc68f584cf84ae3-text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
