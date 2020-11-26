@@ -40,23 +40,13 @@ document.addEventListener('click', function(evt) {
 <SCRIPT> 
  return false; 
 } 
-function noleftclick(e)     
+function click(e)     
 { 
     if (window.Event)     
     { 
         if (e.which == 2 || e.which == 3) 
             return false; 
-    } 
-    else 
-        if (event.button == 2 || event.button == 1) 
-        { 
-            event.cancelBubble = true ; 
-            event.returnValue = false; 
-            return false; 
-        } 
-} 
-document.oncontextmenu = nocontextmenu;         
-document.onmousedown = noleftclick;     
+        
 </SCRIPT>
 <SCRIPT LANGUAGE="JavaScript1.1"> 
  
