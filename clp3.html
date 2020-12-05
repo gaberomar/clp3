@@ -99,15 +99,12 @@ body,html
                     plugins:[DashShakaPlayback,LevelSelector,ChromecastPlugin],
                     mediacontrol:{seekbar:"#fd562c",buttons:"#fd562c"},
                     stretching: 'exactfit',
- 
-                    chromecastConfiguration: {
-                    preferredAudioLanguage: 'pt-BR',
                     chromecast: {
                            appId: '9DFB77C0',
                          media: {
                      type: ChromecastPlugin.None,
                
-                    }  } }
+                     } }
                      });
                    player.on(Clappr.Events.PLAYER_STOP, playerStop);
                    function playerStop(){
