@@ -97,28 +97,33 @@ body,html
                     width: '100%',
                     height: '100%',
                     plugins:[DashShakaPlayback,LevelSelector,ChromecastPlugin],
-                   mediacontrol:{seekbar:"#fd562c",buttons:"#fd562c"},
-                   chromecast: {
+                    mediacontrol:{seekbar:"#fd562c",buttons:"#fd562c"},
+                    stretching: 'exactfit',
+ 
+                    chromecastConfiguration: {
+                    preferredAudioLanguage: 'pt-BR',
+                    chromecast: {
                            appId: '9DFB77C0',
                          media: {
-                  type: ChromecastPlugin.None,
+                     type: ChromecastPlugin.None,
                
-                       } }
-                  });
-                  player.on(Clappr.Events.PLAYER_STOP, playerStop);
-                  function playerStop(){
+                    }  } }
+                     });
+                   player.on(Clappr.Events.PLAYER_STOP, playerStop);
+                   function playerStop(){
                    location.reload();
                    }
                   player.setVolume(100);
                   player.play();
                   document.title = "Reproduciendo: " +url;
     
-                  }
+                   }
 
-                playM3u8(window.location.href.split("#")[1])
+                 playM3u8(window.location.href.split("#")[1])
 
-                  //]]>
-               </script>
+                 //]]>
+                </script>
+                                                        
 
 <style>
 /* <![CDATA[ */
