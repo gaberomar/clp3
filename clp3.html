@@ -68,10 +68,10 @@ function click(e)
         window.onmousedown=right; 
         window.onmouseup=right; 
 </script>
-     <script src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js" type="c5c4a18145f16b8dcd6195ef-text/javascript"></script>
-<script " src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js" type="c5c4a18145f16b8dcd6195ef-text/javascript"></script>
-<script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js" type="c5c4a18145f16b8dcd6195ef-text/javascript"></script>
-<script src="https://cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js" type="c5c4a18145f16b8dcd6195ef-text/javascript"></script>
+     <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js" type="c5c4a18145f16b8dcd6195ef-text/javascript"></script>
+     <script " src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js" type="c5c4a18145f16b8dcd6195ef-text/javascript"></script>
+     <script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js" type="c5c4a18145f16b8dcd6195ef-text/javascript"></script>
+     <script src="https://cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js" type="c5c4a18145f16b8dcd6195ef-text/javascript"></script>
 
 <style>
 body,html
@@ -85,11 +85,11 @@ body,html
 
     </style>
 
-<div id="player"></div>
-<script type="c5c4a18145f16b8dcd6195ef-text/javascript">
-//<![CDATA[ 
-function playM3u8(url){
- var player = new Clappr.Player({                 
+                    <div id="player"></div>
+                    <script type="c5c4a18145f16b8dcd6195ef-text/javascript">
+                    //<![CDATA[ 
+                    function playM3u8(url){
+                    var player = new Clappr.Player({                 
                     source: sv,
                     parentId: '#player',
                     preload: 'auto',
@@ -101,24 +101,24 @@ function playM3u8(url){
                    chromecast: {
                            appId: '9DFB77C0',
                          media: {
-                 type: ChromecastPlugin.None,
+                  type: ChromecastPlugin.None,
                
-                } }
-          });
-       player.on(Clappr.Events.PLAYER_STOP, playerStop);
-            function playerStop(){
-             location.reload();
-            }
-            player.setVolume(100);
-            player.play();
-      document.title = "Reproduciendo: " +url;
+                       } }
+                  });
+                  player.on(Clappr.Events.PLAYER_STOP, playerStop);
+                  function playerStop(){
+                   location.reload();
+                   }
+                  player.setVolume(100);
+                  player.play();
+                  document.title = "Reproduciendo: " +url;
     
-       }
+                  }
 
-       playM3u8(window.location.href.split("#")[1])
+                playM3u8(window.location.href.split("#")[1])
 
-             //]]>
-          </script>
+                  //]]>
+               </script>
 
 <style>
 /* <![CDATA[ */
