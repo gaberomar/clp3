@@ -32,7 +32,8 @@ html
 }
     </style>
 <div id="player"></div>
-<script type="7fd48e4e9b637a138f663eba-text/javascript">               
+<script type="7fd48e4e9b637a138f663eba-text/javascript"> 
+ function playM3u8(url, license){
  var player = new Clappr.Player({                 
                     source: sv,
                     parentId: '#player',
@@ -69,7 +70,7 @@ html
   player.on(Clappr.Events.PLAYER_STOP, playerStop);
             function playerStop(){
              location.reload();
- 
+   }
   document.title = "Reproduciendo: " +url;
     
             }
