@@ -70,7 +70,6 @@ function click(e)
 <script src="https://cdn.jsdelivr.net/npm/clappr-pip@latest/dist/clappr-pip.min.js" type="3d6619a868d6f1b22e7f897e-text/javascript"></script>">
 <script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js" type="3d6619a868d6f1b22e7f897e-text/javascript"></script>
 <script src="https://cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js" type="3d6619a868d6f1b22e7f897e-text/javascript"></script>
-
 <script src='https://futemax.tv/js/qenginev2.js'></script>
 <script src='https://unpkg.com/axios/dist/axios.min.js'></script>
 <style>
@@ -91,7 +90,7 @@ body,html
                     //<![CDATA[ 
                     function playM3u8(url){
                     var player = new Clappr.Player({                 
-                     source: "https://mn-nl.mncdn.com/mekameleen/smil:mekameleentv.smil/playlist.m3u8", 
+                     source: s, 
 
                     parentId: '#player',
                     preload: 'auto',
