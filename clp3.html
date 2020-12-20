@@ -47,14 +47,14 @@ html
                     mediacontrol:{seekbar:"#08fd31",buttons:"#08fd31"},
                     stretching: 'exactfit',
                     levelSelectorConfig: {
-                    title: 'Qualidade',
-                   labels: {
-                  2: 'Alta (HD)',
-                  1: 'Média',
-                 0: 'Baixa',
-               } 
-                }
-            });
+                    title: 'Video Quality',
+    	             		labels: {
+                    0: 'SD', // 120kbps
+                    1: 'HD', // 240kbps
+        	         		2: 'FHD', // 500kbps 	
+                       } 
+                     }
+                    });
 
   player.on(Clappr.Events.PLAYER_STOP, playerStop);
             function playerStop(){
