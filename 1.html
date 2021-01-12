@@ -1,5 +1,5 @@
 ﻿
-    <script src="https://cdn.jsdelivr.net/npm/p2p-media-loader-core@latest/build/p2p-media-loader-core.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/p2p-media-loader-core@latest/build/p2p-media-loader-core.min.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/p2p-media-loader-hlsjs@latest/build/p2p-media-loader-hlsjs.min.js"></script> 
        <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script> 
        <script src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js" type="text/javascript"></script> 
@@ -55,12 +55,21 @@ maxBufferLength: 60,
 liveSyncDurationCount: 9, 
 initialLiveManifestSize: 3 
 } , 
+   shakaOnBeforeLoad: function(shaka_player) {    
+  if (P2PEngineShaka.isSupported()) { 
+   new P2PEngineShaka(shaka_player), {
+        logLevel: 'debug',           
+}
+         
+}
+
+},  
 events: {	
 onError: function (e) 
 { 
 errbox();
- },  
-      }       
+ } 
+      },      
       }) 
   p2pml.hlsjs.initClapprPlayer(player); 
                player.on(Clappr.Events.PLAYER_STOP, playerStop);
