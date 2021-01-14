@@ -57,8 +57,9 @@ var sv = getParam("sv");
 	xhrSetup: function(xhr, url) {
 		xhr.withCredentials = false;
 	  },  
-                    shakaConfiguration: {
+                     shakaConfiguration: {
                 preferredAudioLanguage: 'pt-BR',
+                 streaming: {
                 rebufferingGoal: 6,
                 bufferingGoal: 2,
                 retryParameters: {
@@ -67,8 +68,8 @@ var sv = getParam("sv");
                 baseDelay: 200,
                 backoffFactor: 4,
                 fuzzFactor: 0.5,
-                                }  
-                              },
+                         }  } 
+                        },
           shakaOnBeforeLoad: function(shaka_player) {
             // shaka_player.getNetworkingEngine().registerRequestFilter() ...
                     },
