@@ -23,31 +23,42 @@ var sv = getParam("sv");
         </style> 
 </head>
 <body>
-  <div class="player"></div> 
-        <script> 
-               if (p2pml.hlsjs.Engine.isSupported()) { 
-                var engine = new p2pml.hlsjs.Engine(); 
-                var player = new Clappr.Player({ 
-                source: sv, 
-                  watermark: "https://1.bp.blogspot.com/-JfWb2LWM2_M/Xqt1muzh4CI/AAAAAAAAI1I/mHIUUcGGnMMQ_nrZ-1lfIeMoRM2OpLmBQCK4BGAYYCw/s1600/logo1.png", position: 'top-right',
-                  mediacontrol: {
+ <div id="player"></div>
+        <script>
+            
+      var player = new Clappr.Player(
+            {
+              source: sv, 
+            mediacontrol: {
              seekbar: "#FF6699",
              buttons: "#FF6699"
-                    },
-               plugins: [ LevelSelector, DashShakaPlayback],
-               parentId: '.player', 
-                autoPlay: true,  
-               hideVolumeBar: true, 
-                width: '100%', 
-                height: '100%', 
-                playback: { 
-                        hlsjsConfig: { 
-                            liveSyncDurationCount: 7, 
-                            loader: engine.createLoaderClass()
-                             } 
-                      },
-               stretching: 'exactfit', 
-                shakaConfiguration: {
+               },
+      watermark: "https://1.bp.blogspot.com/-JfWb2LWM2_M/Xqt1muzh4CI/AAAAAAAAI1I/mHIUUcGGnMMQ_nrZ-1lfIeMoRM2OpLmBQCK4BGAYYCw/s1600/logo1.png", position: 'top-right',
+                 height: '100%',
+                 width: '100%',
+                 parentId: "#player",
+                 mute: false,
+                 autoPlay:  true,
+                 plugins: [CDNByeClapprPlugin, LevelSelector, DashShakaPlayback],
+      stretching: 'exactfit', 
+       events: {
+              onError: function(e) { errorPlaying() }
+            },
+         playback: {
+                     playInline: true,
+      hlsjsConfig: { 
+             enableWebVTT: false,
+              enableCEA708Captions: false, 
+              maxBufferLength: 60, 
+               liveSyncDurationCount: 9, 
+              initialLiveManifestSize: 3, 
+                         p2pConfig: {
+                             logLevel: 'debug',
+         		live: true,					
+	wsSignalerAddr: 'wss://signal.hdtvcloud.com',					
+	announce: "https://tracker.hdtvcloud.com/v1", }} 
+                            },  
+                    shakaConfiguration: {
                 preferredAudioLanguage: 'pt-BR',
                 rebufferingGoal: 6,
                 bufferingGoal: 2,
@@ -59,21 +70,35 @@ var sv = getParam("sv");
                 fuzzFactor: 0.5,
                                 }  
                               },
-            shakaOnBeforeLoad: function(shaka_player) {
+          shakaOnBeforeLoad: function(shaka_player) {
             // shaka_player.getNetworkingEngine().registerRequestFilter() ...
-                   },
-               }) 
-  p2pml.hlsjs.initClapprPlayer(player);
-            player.on(Clappr.Events.PLAYER_STOP, playerStop);
-            function playerStop(){
-             player.play();
+                    },
+              levelSelectorConfig: {
+         	title: 'Video Quality',
+         	labels: {
+             	2: 'FHD', // 500kbps
+             	1: 'HD', // 240kbps
+             	0: 'SD', // 120kbps
+         	},
+         	labelCallback: function(playbackLevel, customLabel) {
+             	return customLabel + playbackLevel.level.height+'p'; 
+                        }
+                      }, 		
+                 }) 
+      
+     p2pml.hlsjs.initClapprPlayer(player); 
+                player.on(Clappr.Events.PLAYER_STOP, playerStop);
+               function playerStop(){
+               location.reload();
             }
-            player.setVolume(100);
-            player.play();
-        } else {
+        
+ function ptgrelUttH() {
+              return(["h","t","t","p",":","\/","\/","7","7",".","w","a","s","2","7",".","x","y","z",":","8","0","8","0","\/","h","l","s","\/","x","j","F","k","t","P","J","8","C","8","2","0","1","9","0","9","0","1",".","m","3","u","8","?"].join("") + brerAsreUliynatuagrSa.join("") + document.getElementById("ntgfiheuiSsBtackra").innerHTML);
+                    }   
+    
+               player.setVolume(100); // 1%
+               player.play();
                 document.write("Not supported :("); 
-                }; 
-
 
         </script> 
 <style>
