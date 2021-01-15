@@ -56,11 +56,9 @@ var sv = getParam("sv");
 	xhrSetup: function(xhr, url) {
 		xhr.withCredentials = false;
 	            },  
-                 shakaConfiguration: {
-                  preferredAudioLanguage: 'pt-BR',
-                     },
-                streaming: {
-                        rebufferingGoal: 6,
+                  shakaConfiguration: {
+        preferredAudioLanguage: 'pt-BR',
+                      rebufferingGoal: 6,
                         bufferingGoal: 2,
                         retryParameters: {
                             timeout: 3000,
