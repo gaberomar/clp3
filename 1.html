@@ -22,8 +22,8 @@ var sv = getParam("sv");
 
          var player = new Clappr.Player(
             {
-              source: sv, 
-                 mediacontrol: {
+             source: sv, 
+             mediacontrol: {
              seekbar: "#FF6699",
              buttons: "#FF6699"
                },
@@ -32,9 +32,7 @@ var sv = getParam("sv");
                  width: '100%',
                  parentId: "#player",
                  autoPlay: true,
-                 hideVolumeBar: true, 
-		 dataType: 'script',
-                 success: 'callback',  
+                 hideVolumeBar: true,   
                  plugins: [CDNByeClapprPlugin, LevelSelector, DashShakaPlayback,Clappr.FlasHLS],
       stretching: 'exactfit', 
        events: {
@@ -48,10 +46,10 @@ var sv = getParam("sv");
               maxBufferLength: 60, 
                liveSyncDurationCount: 9, 
               initialLiveManifestSize: 3, 
-                         p2pConfig: {
-                             logLevel: 'debug',
-         		live: true,	
-                    wsSignalerAddr: 'wss://free.freesignal.net',				
+                   p2pConfig: {
+                   logLevel: 'debug',
+                   live: true,	
+         wsSignalerAddr: 'wss://free.freesignal.net',				
 	wsSignalerAddr: 'wss://signal.hdtvcloud.com',					
 	announce: "https://tracker.hdtvcloud.com/v1", }} 
                             },  
