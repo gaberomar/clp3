@@ -72,17 +72,7 @@ var sv = getParam("sv");
           shakaOnBeforeLoad: function(shaka_player) {
             // shaka_player.getNetworkingEngine().registerRequestFilter() ...
                     },
-              levelSelectorConfig: {
-         	title: 'Video Quality',
-         	labels: {
-             	2: 'FHD', // 500kbps
-             	1: 'HD', // 240kbps
-             	0: 'SD', // 120kbps
-         	},
-         	labelCallback: function(playbackLevel, customLabel) {
-             	return customLabel + playbackLevel.level.height+'p'; 
-                        }
-                      }, 		
+            		
                  }) 
               
    player.on(Clappr.Events.PLAYER_STOP, playerStop);
