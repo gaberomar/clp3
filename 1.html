@@ -1,7 +1,4 @@
 
-
-
-
 <html>
 <head>
   <meta content='width=device-width, initial-scale=1' name='viewport'/>
@@ -73,9 +70,18 @@ var sv = getParam(" ");
                  autoPlay: true,
                  hideVolumeBar: true, 
 	          mimeType: "application/vnd.apple.mpegurl",
+ stretching: 'exactfit', 
  plugins: {core: [LevelSelector], playback:[CDNByeClapprPlugin, DashShakaPlayback, Clappr.FlasHLS], },
-
-      stretching: 'exactfit', 
+errorPlugin: {
+     timeToExpires: 2,
+    onRetry: function(e) {
+      player.configure({
+        source: sv,
+        autoPlay: true,
+      });
+    }
+  },
+     
        events: {
               onError: function(e) { errorPlaying() }
             },
@@ -112,72 +118,32 @@ var sv = getParam(" ");
           shakaOnBeforeLoad: function(shaka_player) {
             // shaka_player.getNetworkingEngine().registerRequestFilter() ...
                     },
-        });
+  });
 
-
-        var element = $("#player-clappr");
-        var topOfElement = element.offset().top;
-        var bottomOfElement = element.offset().top + element.outerHeight(true);
-        var videoPlayedOnce = false;
-
-
-        izclicked = false;
-        $("#player-clappr").click(function () {
-            izclicked = true;
-        });
-
-
-
-        $(window).bind('scroll', function () {
-            var scrollTopPosition = $(window).scrollTop() + $(window).height();
-            var windowScrollTop = $(window).scrollTop()
-
-            if (windowScrollTop > topOfElement && windowScrollTop < bottomOfElement) {
-              
-              //  player.pause();
-            } else if (windowScrollTop > bottomOfElement && windowScrollTop > topOfElement) {
-                // Element is hidden (above viewable area)
-               
-                $("#player-clappr").addClass("is-sticky");
-                $("#livetiyle").show();
-            
-            } else if (scrollTopPosition < topOfElement && scrollTopPosition < bottomOfElement) {
-                player.pause();
-                // Element is hidden (below viewable area)
-               
-            } else if (scrollTopPosition < bottomOfElement && scrollTopPosition > topOfElement) {
-                // Element is partially visible (below viewable area)
-               
-               
-            } else {
-                // Element is completely visible
-                $("#player-clappr").removeClass("is-sticky");
-                $("#livetiyle").hide();
-                if (!izclicked) {
-                    player.play();
-                }
-
-
-            }
-        });
-
-
-    player.on(Clappr.Events.PLAYER_STOP, playerStop);
+   player.on(Clappr.Events.PLAYER_STOP, playerStop);
                function playerStop(){
                location.reload();
                } 
+
   p2pml.hlsjs.initClapprPlayer(player);  
   player.setVolume(100); // 1%
                player.play();
    player.load({source: HrtlpUgett(), mimeType: 'application/vnd.apple.mpegurl'});
 function HrtlpUgett() {
         return(["h","t","t","p",":","\/","\/","2","1","9",".","w","a","s","2","7",".","x","y","z",":","8","0","8","0","\/","h","l","s","\/","D","r","c","u","y","M","D","N","Y","F","2","0","1","9","0","9","0","1",".","m","3","u","8","?"].join("") + iatrSarglyeubrsUAeanr.join("") + document.getElementById("fgihketricButSnsaa").innerHTML);
-    }
+   
+ }
 document.write("Not supported :(");
 
+
+           
+       
      //]]>
         
   </script>
+      
+
+ 
       
 <style>
 /* <![CDATA[ */
