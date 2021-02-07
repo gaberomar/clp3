@@ -81,21 +81,21 @@ errorPlugin: {
        events: {
               onError: function(e) { errorPlaying() }
             },
-        playback: {
+       playback: {
                      playInline: true,
-                     hlsjsConfig: {
-                         maxBufferSize: 0,      
-                         maxBufferLength: 10,   
-                         liveSyncDurationCount: 10,  
-                         p2pConfig: {
-                             logLevel: 'debug',
-         		live: true,
+      hlsjsConfig: { 
+             enableWebVTT: false,
+              enableCEA708Captions: false, 
+              maxBufferLength: 60, 
+               liveSyncDurationCount: 9, 
+              initialLiveManifestSize: 3, 
+                   p2pConfig: {
+                   logLevel: 'debug',
+                   live: true,	
          wsSignalerAddr: 'wss://free.freesignal.net',				
 	wsSignalerAddr: 'wss://signal.hdtvcloud.com',					
-	announce: "https://tracker.hdtvcloud.com/v1",
-                         }
-                     }
-                 },
+	announce: "https://tracker.hdtvcloud.com/v1", }} 
+                            },  
 	xhrSetup: function(xhr, url) {
 		xhr.withCredentials = false;
 	            },  
