@@ -81,21 +81,21 @@ errorPlugin: {
        events: {
               onError: function(e) { errorPlaying() }
             },
-         playback: {
+        playback: {
                      playInline: true,
-      hlsjsConfig: { 
-             enableWebVTT: false,
-              enableCEA708Captions: false, 
-              maxBufferLength: 60, 
-               liveSyncDurationCount: 9, 
-              initialLiveManifestSize: 3, 
-                   p2pConfig: {
-                   logLevel: 'debug',
-                   live: true,	
+                     hlsjsConfig: {
+                         maxBufferSize: 0,      
+                         maxBufferLength: 10,   
+                         liveSyncDurationCount: 10,  
+                         p2pConfig: {
+                             logLevel: 'debug',
+         		live: true,
          wsSignalerAddr: 'wss://free.freesignal.net',				
 	wsSignalerAddr: 'wss://signal.hdtvcloud.com',					
-	announce: "https://tracker.hdtvcloud.com/v1", }} 
-                            },  
+	announce: "https://tracker.hdtvcloud.com/v1",
+                         }
+                     }
+                 },
 	xhrSetup: function(xhr, url) {
 		xhr.withCredentials = false;
 	            },  
@@ -114,8 +114,10 @@ errorPlugin: {
           shakaOnBeforeLoad: function(shaka_player) {
             // shaka_player.getNetworkingEngine().registerRequestFilter() ...
                     },
+		    
   });
 
+	    
    player.on(Clappr.Events.PLAYER_STOP, playerStop);
                function playerStop(){
                location.reload();
@@ -131,16 +133,10 @@ function HrtlpUgett() {
  }
 document.write("Not supported :(");
 
-
-           
-       
-     //]]>
-        
+  
+     //]]>    
   </script>
-      
-
- 
-      
+          
 <style>
 /* <![CDATA[ */
 
@@ -157,8 +153,6 @@ jw-controls.jw-reseth:before{content:'';z-index:9;position:absolute;right:0;left
    .
 
 /*]]>*/</style>
-
-
 
 <style>
 /* <![CDATA[ */
