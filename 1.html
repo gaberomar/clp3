@@ -68,16 +68,6 @@ var sv = getParam(" ");
 	          mimeType: "application/vnd.apple.mpegurl",
  stretching: 'exactfit', 
  plugins: {core: [LevelSelector], playback:[CDNByeClapprPlugin, DashShakaPlayback, Clappr.FlasHLS], },
-errorPlugin: {
-     timeToExpires: 2,
-    onRetry: function(e) {
-      player.configure({
-        source: sv,
-        autoPlay: true,
-      });
-    }
-  },
-     
        events: {
               onError: function(e) { errorPlaying() }
             },
@@ -114,7 +104,15 @@ errorPlugin: {
           shakaOnBeforeLoad: function(shaka_player) {
             // shaka_player.getNetworkingEngine().registerRequestFilter() ...
                     },
-		    
+		  errorPlugin: {
+     timeToExpires: 2,
+    onRetry: function(e) {
+      player.configure({
+        source: sv,
+        autoPlay: true,
+      });
+    }
+  },  
   });
 
 	    
