@@ -67,6 +67,9 @@ var sv = getParam(" ");
 	          mimeType: "application/vnd.apple.mpegurl",
  stretching: 'exactfit', 
  plugins: {core: [LevelSelector], playback:[CDNByeClapprPlugin, DashShakaPlayback, Clappr.FlasHLS], },
+		    events: {
+              onError: function(e) { errorPlaying() }
+            },    
        playback: {
                      playInline: true,
       hlsjsConfig: { 
@@ -100,9 +103,7 @@ var sv = getParam(" ");
           shakaOnBeforeLoad: function(shaka_player) {
             // shaka_player.getNetworkingEngine().registerRequestFilter() ...
                     },
-		     events: {
-              onError: function(e) { errorPlaying() }
-            },
+		 
 		  errorPlugin: {
      timeToExpires: 2,
     onRetry: function(e) {
