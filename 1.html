@@ -66,10 +66,7 @@ var player = new Clappr.Player(
                  hideVolumeBar: true, 
 	          mimeType: "application/vnd.apple.mpegurl",
  stretching: 'exactfit', 
- plugins: [LevelSelector, CDNByeClapprPlugin, DashShakaPlayback, ErrorPlugin, Clappr.FlasHLS], 
-		    events: {
-              onError: function(e) { errorPlaying() }
-            },    
+ plugins: [LevelSelector, CDNByeClapprPlugin, DashShakaPlayback, ErrorPlugin, Clappr.FlasHLS], 		   
        playback: {
                      playInline: true,
       hlsjsConfig: { 
@@ -103,7 +100,9 @@ var player = new Clappr.Player(
           shakaOnBeforeLoad: function(shaka_player) {
             // shaka_player.getNetworkingEngine().registerRequestFilter() ...
                     },
-		 
+		     events: {
+              onError: function(e) { errorPlaying() }
+            }, 
 		  errorPlugin: {
      timeToExpires: 2,
     onRetry: function(e) {
