@@ -66,11 +66,11 @@ var sv = getParam(" ");
                               sources: [{source: sv,}],          
                                    parentId: "#player",
                                     height: "100%",
-                                    width: "100%", 
-                                    aspectRatio: "16:9",
+                                    width: "100%",
+		                     muted: false,
                                     auto_play: true,
-                                    muted: false,
-                                    hideVolumeBar: true,
+                                    hideVolumeBar: true,  
+		                     aspectRatio: "16:9",
                                     playsInline: true,
                                    mediacontrol: {
                                    seekbar: "#FF6699",
@@ -78,7 +78,6 @@ var sv = getParam(" ");
                                             },
                                 watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", position: 'bottom-left',
                                 plugins: [LevelSelector,  DashShakaPlayback, ErrorPlugin, Clappr.FlasHLS],
-                                 
                                   settings: true, 
                                    events: {
                              onError: function(e) { errorPlaying() }
