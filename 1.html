@@ -8,6 +8,17 @@
 <script src="https://rawgit.com/xbdinfo/file/5ca03205/videojs-contrib-hls.min.js"></script>
 <script src="https://rawgit.com/xbdinfo/file/5ca03205/vjs-hls.min.js"></script>
 
+<script>
+function getParam ( sname )
+{
+  var params = location.search.substr(location.search.indexOf("?")+1);
+  var sval =  params.replace("sv=", "");
+  
+  return sval;
+}
+var sv = getParam("sv");
+
+</script>
 
 <body onLoad="init()"><div id="videojs"><video id="restre" autoplay preload="auto" height="100%" width="100%" class="video-js" controls data-setup='{"language": "vi"}'></video></div>
 <script>	
