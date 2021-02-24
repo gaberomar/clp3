@@ -62,16 +62,17 @@ player = new Clappr.Player({
               //onError: function(e) { errorPlaying() }
             },
                 playback: {
-                                playInline: true,
-                                html5: true,
-                                hlsjsConfig: {
-                             maxBufferSize: 0,      
-                            maxBufferLength: 10,   
-                          liveSyncDurationCount: 10, 	
-                           p2pConfig: {
-                             logLevel: 'debug',
-         		live: true,
-         		announce: "https://tracker.hdtvcloud.com/v1",        
+               playInline: true,
+                   html5: true,
+                  hlsjsConfig: {
+	        liveSyncDuration: 5,
+                maxBufferSize: 0,      
+               maxBufferLength: 10,   
+              liveSyncDurationCount: 10, 	
+                   p2pConfig: {
+                  logLevel: 'debug',
+                      live: true,
+         	announce: "https://tracker.hdtvcloud.com/v1",        
                          }
                      }
                  },
@@ -88,9 +89,9 @@ player = new Clappr.Player({
                     // shaka_player.getNetworkingEngine().registerRequestFilter() ...
                 }, 
 	errorPlugin: {
-    timeToExpires: 2,
-    onRetry: function(e) {
-     player.configure({
+       timeToExpires: 2,
+      onRetry: function(e) {
+       player.configure({
         source: sv,
         autoPlay: true,
 	     
