@@ -70,9 +70,9 @@ var player = new Clappr.Player({
       buttons: "#f01fda"
               },
    plugins: [LevelSelector,  HlsjsPlayback, ErrorPlugin, Clappr.FlasHLS], 
-   events: {
-   onError: function(e) { errorPlaying() }
-           },
+  events: {
+              //onError: function(e) { errorPlaying() }
+            },
    hlsUseNextLevel: false,
     hlsMinimumDvrSize: 60,
     hlsRecoverAttempts: 16,
