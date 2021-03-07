@@ -81,8 +81,18 @@ var player = new Clappr.Player({
       triggerFatalErrorOnResourceDenied: false,
       hlsjsConfig: {
         // hls.js specific options
-      },
-    },
+           }
+        },
+	errorPlugin: {
+       timeToExpires: 2,
+       onRetry: function(e) {
+       player.configure({
+        source: sv,
+        autoPlay: true,
+	     
+      });
+    }
+  }, 
        });
 
  player.on(Clappr.Events.PLAYER_STOP, playerStop);
