@@ -78,8 +78,11 @@ function gUlrmRettp() {
     var string = reg.exec(href);
     return string ? string[1] : null;
       };
+	if (window.hlsjsplayback) window.hlsjsplayback.configure({hlsjs: true});
+var playerElement = document.getElementById("player");
     				var player = new Clappr.Player({
 				source: sv,
+				mimeType: 'application/x-mpegURL',
 			        plugins: [LevelSelector,  HlsjsPlayback, ErrorPlugin, Clappr.FlasHLS], 	
 				autoPlay: "true",
 				height: '100%',
