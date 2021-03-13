@@ -68,9 +68,6 @@ var playerElement = document.getElementById("player");
 				mediacontrol: {seekbar: "#f01fda", buttons: "#f01fda"},
 				position: "bottom-left", 
                                 watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", 				
-				   events: {
-                            //onError: function(e) { errorPlaying() }
-                                  }, 
                                   hlsjsConfig: {
 		                xhrSetup: function(xhr, url) {
 			         xhr.withCredentials = false;
@@ -79,7 +76,9 @@ var playerElement = document.getElementById("player");
 		                playbackConfig: {
 		                crossorigin: 'use-credentials',
                                  },
-                                		                       
+                                 events: {
+                                     //onError: function(e) { errorPlaying() }
+                                  }, 	                       
                                   }); 
        
                          player.on(Clappr.Events.PLAYER_STOP, playerStop);
