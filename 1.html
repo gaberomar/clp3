@@ -40,11 +40,11 @@ var sv = getParam("sv");
 <script type="text/javascript">
 function getParam ( sname )
 {
-  let params = location.search.substr(location.search.indexOf("?")+1);
- let sval =  params.replace("sv=", "");
+  var params = location.search.substr(location.search.indexOf("?")+1);
+ var sval =  params.replace("sv=", "");
   return sval;
 }
-let sv = getParam("sv");
+var sv = getParam("sv");
 </script>
 
 <div style="width: 100%;">
