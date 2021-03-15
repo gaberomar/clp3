@@ -40,11 +40,11 @@ var sv = getParam("sv");
 <script type="text/javascript">
 function getParam ( sname )
 {
-  var params = location.search.substr(location.search.indexOf("?")+1);
- var sval =  params.replace("sv=", "");
+  let params = location.search.substr(location.search.indexOf("?")+1);
+ let sval =  params.replace("sv=", "");
   return sval;
 }
-var sv = getParam("sv");
+let sv = getParam("sv");
 </script>
 
 <div style="width: 100%;">
@@ -99,7 +99,7 @@ let playerElement = document.getElementById("player");
       <script>
   function errorPlaying(){
     url = "";
-    var a = document.createElement("a");
+    let a = document.createElement("a");
     if (a.click) {
         a.setAttribute("href", url);
         a.setAttribute("target", "_self");
