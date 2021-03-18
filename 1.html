@@ -63,7 +63,7 @@ var sv = getParam("sv");
 if (window.peer5) window.peer5.configure({p2p: true});
 var playerElement = document.getElementById("player");
 	var player = new Clappr.Player({
-				 parentId: "#player",
+        parentId: "#player",
         source: sv, 
         mimeType: 'application/x-mpegURL',			       
         plugins: [LevelSelector,   ErrorPlugin, Clappr.FlasHLS], 	
