@@ -75,14 +75,14 @@ if (window.peer5) window.peer5.configure({p2p: true});
 				    events: {
                             //onError: function(e) { errorPlaying() }
                                   },
-		                 playbackConfig: {
-		                crossorigin: 'use-credentials',
-                                 },
-                                  hlsjsConfig: {
-		                xhrSetup: function(xhr, url) {
-			         xhr.withCredentials = false;
-		                   }
-				  },		                       
+		               hlsjsConfig: {
+		xhrSetup: function(xhr, url) {
+			xhr.withCredentials = true;
+		}
+	},
+	playbackConfig: {
+		crossorigin: 'use-credentials'
+	}		                       
                                   }); 
        
                          player.on(Clappr.Events.PLAYER_STOP, playerStop);
