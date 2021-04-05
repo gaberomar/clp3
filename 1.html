@@ -102,10 +102,7 @@ player = new Clappr.Player({
 	watermarkLink: 'http://www.koraglive.cf',
 	allowUserInteraction: false,
 	persistConfig: false,
-	mediacontrol: {seekbar: "#ea6810", buttons: "#ea6810"},
-                 events: {
-              onError: function(e) { errorPlaying() },			  		  
-            },
+	mediacontrol: {seekbar: "#ea6810", buttons: "#ea6810"},        
        plugins: [
        LevelSelector, ErrorPlugin
             ],
@@ -116,7 +113,10 @@ player = new Clappr.Player({
 	},
 	playbackConfig: {
 		crossorigin: 'use-credentials'
-	}
+	},
+	 events: {
+              onError: function(e) { errorPlaying() },			  		  
+            }
          });
 
 function plstst(){
