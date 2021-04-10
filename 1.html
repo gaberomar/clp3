@@ -1,4 +1,5 @@
 
+
  <html><head>
 <style id='page-skin-1' type='text/css'><!--
 *{margin:0; padding:0; overflow: hidden;}
@@ -81,18 +82,12 @@ if (window.peer5) window.peer5.configure({p2p: true});
 
 player = new Clappr.Player({
         source: sv,
-        fullscreen: false,
         mimeType: 'application/x-mpegURL',
         autoPlay: true, 
         mute: false, 
         hideVolumeBar: true,
-	loop: true, 
         height: '100%',
         width: '100%',
-	playback: {
-        playInline: 'playsinline'
-            },
-	//plugins: {'core': [LevelSelector]},  
         parentId: '#vid',
 	watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", 				
 	position: 'bottom-left',
@@ -103,13 +98,16 @@ player = new Clappr.Player({
        plugins: [
        LevelSelector, ErrorPlugin
             ],
+playback: {
+        playInline: 'playsinline'
+            },
   hlsjsConfig: {
 		xhrSetup: function(xhr, url) {
 			xhr.withCredentials = false;
 		}
 	},
 	playbackConfig: {
-		crossorigin: 'use-credentials'
+		crossorigin: 'use-credentials',
 	},
 	 events: {
               onError: function(e) { errorPlaying() },			  		  
