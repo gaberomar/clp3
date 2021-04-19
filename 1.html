@@ -65,7 +65,7 @@ var sv = getParam("sv");
 <script>
 	var player;
              
-	if (typeof engine!="undefined" && typeof peer5!="undefined" ) {
+	if (typeof engine!="undefined" && typeof p2pml!="undefined" ) {
         if (window.peer5) window.peer5.configure({p2p: true});
 	hlsjsConfig["loader"] = engine.createLoaderClass();	
 	}
@@ -153,21 +153,8 @@ hlsjsConfig: {
 	{
 		player.unmute();
 	}
-function plstst(){
-		var ua = navigator.userAgent.toLowerCase();
-	      
-if(ua.indexOf("iphone") != -1 || ua.indexOf("ipad") != -1){
-//player.pause ();	
-//player.getPlugin('poster').el.classList.add('psdrddd');
-}else {
-//player.pause ();
-player.core.mediaControl.toggleFullscreen();
-//player.getPlugin('poster').el.classList.add('psdrddd');
 
-}
-}
-setTimeout(plstst, 39000);
-peer5.hlsjs.initClapprPlayer(player);
+	setTimeout(plstst, 3000);
   player.on(Clappr.Events.PLAYER_STOP, playerStop);
                function playerStop(){
                location.reload();
