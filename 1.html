@@ -23,9 +23,10 @@ function getParam ( sname )
 var sv = getParam("sv");
 
 </script>
+<div id="overlay"></div>
 <script>
   function errorPlaying(){
-    url = "/stream/6/98357.html";
+    url = "";
     var a = document.createElement("a");
     if (a.click) {
         a.setAttribute("href", url);
@@ -38,6 +39,7 @@ var sv = getParam("sv");
     }
 
   }
+
 
 </script>
 
@@ -93,11 +95,9 @@ var sv = getParam("sv");
 			persistConfig: false,
  mediacontrol: {seekbar: "#ea6810", buttons: "#ea6810"},  
 
-			events     :
-			{
-    			onError: function(e) {
-					errorPlaying();
-				},
+			 events: {
+              onError: function(e) { errorPlaying() }
+           },
 hlsjsConfig: {
 		xhrSetup: function(xhr, url) {
 			xhr.withCredentials = false;
