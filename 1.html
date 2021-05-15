@@ -135,13 +135,13 @@ hlsjsConfig: {
 <script>
 function togglePlayPauseNew() {
 	// If the Player is currently paused or has ended
-	if (mediaPlayer.paused) {
+	if (Player.paused) {
 		// Change the button to be a pause button
 		changeButtonType(playPauseBtn, 'pause');
     	$(".fp-play").toggleClass("fp-visible");
     	setTimeout(function(){ $(".fp-play").toggleClass("fp-visible"); }, 300);	
 		// Play the media
-		mediaPlayer.play();
+		Player.play();
 	}
 	// Otherwise it must currently be playing
 	else {
@@ -151,7 +151,7 @@ function togglePlayPauseNew() {
 		mediaPlayer.pause();
 	}
 }
-var vidElem = document.getElementById('mediaplayer');
+var vidElem = document.getElementById('Player');
 $("#fadein").one("click", function () {
 	vidElem.muted = false;
     vidElem.volume = 1.0;
