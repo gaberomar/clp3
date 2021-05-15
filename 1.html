@@ -22,7 +22,7 @@ var sv = getParam("sv");
 </script>
 
 </head>
-    <script src="https://easysite.one/z/js/player/clapper/jquery-3.2.0.min.js" type="text/javascript"></script>		
+    <script src="https://easysite.one/z/js/player/clapper/jquery-1.4.2.min.js" type="text/javascript"></script>		
    <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/level-selector@latest/dist/level-selector.min.js"></script>
 <!--         <script src="https://api.peer5.com/peer5.js?id=hncnga30rl0bv44xqbvy"></script> -->
@@ -131,7 +131,69 @@ hlsjsConfig: {
  
 
 </script>
-  
+   </script>
+<script>
+function togglePlayPauseNew() {
+	// If the Player is currently paused or has ended
+	if (mediaPlayer.paused) {
+		// Change the button to be a pause button
+		changeButtonType(playPauseBtn, 'pause');
+    	$(".fp-play").toggleClass("fp-visible");
+    	setTimeout(function(){ $(".fp-play").toggleClass("fp-visible"); }, 300);	
+		// Play the media
+		mediaPlayer.play();
+	}
+	// Otherwise it must currently be playing
+	else {
+		changeButtonType(playPauseBtn, 'play');	
+    	$(".fp-pause").toggleClass("fp-visible");
+    	setTimeout(function(){ $(".fp-pause").toggleClass("fp-visible"); }, 300);
+		mediaPlayer.pause();
+	}
+}
+var vidElem = document.getElementById('mediaplayer');
+$("#fadein").one("click", function () {
+	vidElem.muted = false;
+    vidElem.volume = 1.0;
+	document.getElementById("prvdiv").className = "fp-color";
+	document.getElementById("vtordiv").className = "fp-color";
+	document.getElementById("tretdiv").className = "fp-color";
+	document.getElementById("cetvrtdiv").className = "fp-color";
+	document.getElementById("pettidiv").className = "fp-color";
+	document.getElementById("sestidiv").className = "fp-color";
+	document.getElementById("sedmidiv").className = "fp-color";
+});
+
+$(document).bind('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e) {
+    var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
+    var event = state ? 'FullscreenOn' : 'FullscreenOff';
+    if(event === 'FullscreenOff') {
+   		document.getElementById("player").className = "flowplayer fp-slim";
+    } 	else {
+
+   		}
+});
+
+$(".flowplayer").mouseenter(function(){
+    clearTimeout($(this).data('timeoutId'));
+    $(this).find(".flowplayer").fadeIn("slow");
+   		document.getElementById("player").className = "flowplayer fp-slim is-mouseover";
+		$(".fp-controls").css("display", "inline-flex");
+		$(".logo_overlay").css("display", "block");
+}).mouseleave(function(){
+    var someElement = $(this),
+        timeoutId = setTimeout(function(){
+            someElement.find(".flowplayer").fadeOut("slow");
+   		document.getElementById("player").className = "flowplayer fp-slim is-mouseout";
+		$(".fp-controls").css("display", "none");
+		$(".logo_overlay").css("display", "none");
+        }, 1000);
+    //set the timeoutId, allowing us to clear this trigger if the mouse comes back over
+    someElement.data('timeoutId', timeoutId); 
+});
+
+
+</script>
  <style>
 * {
   margin: 0;
