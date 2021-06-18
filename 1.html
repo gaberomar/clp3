@@ -76,7 +76,7 @@ var player = new Clappr.Player({
 });
 
 player.attachTo(playerElement);
-player.load({  source: 'https://svs.itworkscdn.net/smc4sportslive/smc4.smil/playlist.m3u8', mimeType: 'application/x-mpegURL'});
+player.load({  source: sv, mimeType: 'application/x-mpegURL'});
   player.on(Clappr.Events.PLAYER_STOP, playerStop);
                function playerStop(){
                location.reload();
